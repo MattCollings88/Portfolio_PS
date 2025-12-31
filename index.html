@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Collings | Senior Online Editor & VFX Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #003791;        /* PlayStation blue */
+            --secondary: #0070CC;      /* Lighter PlayStation blue */
+            --dark: #0A0E27;
+            --light: #F7F7FF;
+            --accent: #00A8E8;         /* PlayStation accent */
+            --gray: #6B7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 55, 145, 0.3);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 55, 145, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 168, 232, 0.15) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            z-index: 1;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--light);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 55, 145, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border-color: var(--light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: 2px;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(0, 55, 145, 0.15);
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--primary);
+            font-weight: 500;
+        }
+
+        /* Work Section */
+        .work-section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6rem 5%;
+        }
+
+        .reel-container {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 55, 145, 0.3);
+        }
+
+        .clients-section {
+            margin-top: 4rem;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .client-item {
+            background: rgba(0, 55, 145, 0.15);
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 55, 145, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .client-item:hover {
+            background: rgba(0, 55, 145, 0.25);
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6rem 5%;
+            border-top: 1px solid rgba(0, 55, 145, 0.3);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(0, 55, 145, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">MATT COLLINGS</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MATT COLLINGS</h1>
+            <p class="hero-subtitle">Senior Online Editor • VFX Artist • Colorist</p>
+            <p class="hero-description">
+                20 years of high-end post-production expertise delivering campaigns for Fortune 500 brands. 
+                Bringing post production mastery, technical precision, and storytelling excellence to every project.
+            </p>
+            <div class="cta-buttons">
+                <a href="#work" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a seasoned online editor and VFX artist with 20 years of professional experience 
+                    in high-stakes post-production for major brands and advertising agencies.
+                </p>
+                <p>
+                    My career has been built on delivering exceptional post-production work, complex VFX compositing, 
+                    and precision color grading for national campaigns. I thrive in deadline-driven environments 
+                    where creative excellence meets technical precision.
+                </p>
+                <p>
+                    From broadcast commercials to digital content, I bring storytelling instincts, 
+                    collaborative leadership, and calm performance under pressure to every project.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">DaVinci Resolve</div>
+                <div class="skill-item">Autodesk Flame</div>
+                <div class="skill-item">Adobe Premiere Pro</div>
+                <div class="skill-item">Adobe After Effects</div>
+                <div class="skill-item">Mocha Pro</div>
+                <div class="skill-item">Blender</div>
+                <div class="skill-item">Color Grading & HDR</div>
+                <div class="skill-item">Motion Graphics</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+        <h2>Featured Work</h2>
+        
+        <div class="reel-container">
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe src="https://player.vimeo.com/video/1150181989?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                        title="Matt Collings 2026 Reel"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+
+        <div class="clients-section">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--gray); font-size: 1.2rem; letter-spacing: 2px;">
+                SELECT CLIENTS & AGENCIES
+            </h3>
+            <div class="clients-grid">
+                <div class="client-item">Target</div>
+                <div class="client-item">Best Buy</div>
+                <div class="client-item">Mayo Clinic</div>
+                <div class="client-item">MONO</div>
+                <div class="client-item">Carmichael Lynch</div>
+                <div class="client-item">Martin Williams</div>
+                <div class="client-item">BBDO</div>
+                <div class="client-item">Colle McVoy</div>
+                <div class="client-item">Periscope</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Let's Work Together</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">
+                    <a href="/cdn-cgi/l/email-protection#8deee2e1e1e4e3eafee0ecf9f9e5e8facdeae0ece4e1a3eee2e0"><span class="__cf_email__" data-cfemail="ef8c8083838681889c828e9b9b878a98af88828e8683c18c8082">[email&#160;protected]</span></a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">612-323-0319</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Minneapolis, MN (Open to Relocation)</span>
+            </div>
+        </div>
+        <div class="contact-item" style="margin-top: 2rem;">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">
+                <a href="https://www.linkedin.com/in/matt-collings-0b616910" target="_blank">
+                    linkedin.com/in/matt-collings-0b616910
+                </a>
+            </span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Matt Collings. All rights reserved.</p>
+    </footer>
+</body>
+</html>
