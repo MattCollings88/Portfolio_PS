@@ -13,11 +13,11 @@
         }
 
         :root {
-            --primary: #003791;        /* PlayStation blue */
-            --secondary: #0070CC;      /* Lighter PlayStation blue */
+            --primary: #003791;
+            --secondary: #0070CC;
             --dark: #0A0E27;
             --light: #F7F7FF;
-            --accent: #00A8E8;         /* PlayStation accent */
+            --accent: #00A8E8;
             --gray: #6B7280;
         }
 
@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -75,7 +74,6 @@
             color: var(--secondary);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -182,7 +180,6 @@
             transform: translateY(-2px);
         }
 
-        /* Section Styling */
         section {
             padding: 6rem 5%;
             max-width: 1400px;
@@ -198,7 +195,6 @@
             color: var(--primary);
         }
 
-        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -229,7 +225,6 @@
             font-weight: 500;
         }
 
-        /* Work Section */
         .work-section {
             background: rgba(255, 255, 255, 0.02);
             padding: 6rem 5%;
@@ -270,7 +265,6 @@
             border-color: var(--primary);
         }
 
-        /* Contact Section */
         .contact-section {
             background: rgba(0, 0, 0, 0.3);
             padding: 6rem 5%;
@@ -282,7 +276,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
         }
 
         .contact-item {
@@ -315,7 +309,6 @@
             color: var(--accent);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 3rem 5%;
@@ -328,47 +321,38 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 5%;
             }
-
             .nav-links {
                 gap: 1rem;
             }
-
             .nav-links a {
                 font-size: 0.85rem;
             }
-
             .about-content {
                 grid-template-columns: 1fr;
             }
-
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
             .btn {
                 width: 100%;
                 max-width: 300px;
             }
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-content">
             <div class="logo">MATT COLLINGS</div>
@@ -380,14 +364,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>MATT COLLINGS</h1>
             <p class="hero-subtitle">Senior Online Editor • VFX Artist • Colorist</p>
             <p class="hero-description">
                 20 years of high-end post-production expertise delivering campaigns for Fortune 500 brands. 
-                Bringing post-production mastery, technical precision, and storytelling excellence to every project.
+                Bringing post production mastery, technical precision, and storytelling excellence to every project.
             </p>
             <div class="cta-buttons">
                 <a href="#work" class="btn btn-primary">View My Work</a>
@@ -396,7 +379,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2>About</h2>
         <div class="about-content">
@@ -428,13 +410,11 @@
         </div>
     </section>
 
-    <!-- Work Section -->
     <section id="work" class="work-section">
         <h2>Featured Work</h2>
-        
         <div class="reel-container">
             <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1150181989?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                <iframe src="https://player.vimeo.com/video/1150181989?badge=0&autopause=0&player_id=0&app_id=58479" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin" 
@@ -445,7 +425,6 @@
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
-
         <div class="clients-section">
             <h3 style="text-align: center; margin-bottom: 2rem; color: var(--gray); font-size: 1.2rem; letter-spacing: 2px;">
                 SELECT CLIENTS & AGENCIES
@@ -464,14 +443,13 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Let's Work Together</h2>
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-label">Email</span>
                 <span class="contact-value">
-                   <a href="mailto:collingsmatthew@gmail.com">collingsmatthew@gmail.com</a>
+                    <a href="mailto:collingsmatthew@gmail.com">collingsmatthew@gmail.com</a>
                 </span>
             </div>
             <div class="contact-item">
@@ -493,7 +471,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Matt Collings. All rights reserved.</p>
     </footer>
